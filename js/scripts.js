@@ -39,3 +39,47 @@ document.getElementById("btnTax").onclick = function () {
 
     document.getElementById("kqBai1").innerHTML = "Thuế thu nhập cá nhân: " + new Intl.NumberFormat().format(tax) + " VNĐ";
 }
+
+/**
+ * Bài 2: Tính tiền cáp
+ */
+
+var connectionsInput = document.getElementById("connections");
+var companyRadio = document.getElementById("company");
+var personalRadio = document.getElementById("personal");
+
+companyRadio.onclick = function () {
+    connectionsInput.removeAttribute("disabled");
+}
+
+personalRadio.onclick = function () {
+    connectionsInput.setAttribute("disabled", "true");
+    connectionsInput.value = "";
+}
+
+document.getElementById("btnTinhTien").onclick = function () {
+    var customer = document.getElementById("customerID").value;
+    var premium = Number(document.getElementById("premium").value);
+    var connections = Number(connectionsInput.value);
+    var thanhTien = 0;
+
+    if (personalRadio.checked) {
+        thanhTien = 4.5 + 20.5 + 7.5 * premium;
+    } else if (companyRadio.checked) {
+
+        if (connections > 0 && connections <= 10) {
+            thanhTien = 15 + 75 + 50 * premium;
+        } else if (connections > 10) {
+            thanhTien = 15 + 75 + (connections - 10) * 5 + 50 * premium;
+        } else {
+            alert("Số kết nối phải lớn hơn 0!");
+            return;
+        }
+
+    } else {
+        alert("Vui lòng chọn loại khách hàng!");
+        return;
+    }
+
+    document.getElementById("kqBai2").innerHTML = "Khách hàng: <b>" + customer + "</b><br>" + "Tổng tiền phải thanh toán: " + "<b>" + new Intl.NumberFormat().format(thanhTien) + "$</b>";
+}
