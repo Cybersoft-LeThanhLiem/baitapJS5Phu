@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="col-6">
+            <form>
+                <h3>Tính thuế thu nhập cá nhân</h3>
+                <div class="form-group row">
+                    <label for="name" class="col-4 col-form-label">Họ tên: </label>
+                    <div class="col-8">
+                        <input type="text" class="form-control" autocomplete="off" id="name">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="income" class="col-4 col-form-label">Tổng thu nhập năm: </label>
+                    <div class="col-8">
+                        <input type="number" class="form-control" id="income">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="dependents" class="col-4 col-form-label">Số người phụ thuộc: </label>
+                    <div class="col-8">
+                        <input type="number" class="form-control" id="dependents">
+                    </div>
+                </div>
+                <button type="button" id="btnTax" class="btn btn-warning mb-2">Tính thuế</button>
+                <p id="kqBai1"></p>
+            </form>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="./js/scripts.js"></script>
+</body>
+
+</html>
